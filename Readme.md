@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Инесса Пугина](https://up.htmlacademy.ru/javascript-individual/2/user/2643953).
-* Наставник: `Неизвестно`.
+* Наставник: [Виктория Никитина](https://htmlacademy.ru/profile/id1217273).
 
 ---
 
