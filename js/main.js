@@ -69,4 +69,4 @@ const createPhoto = (i) => ({
 });
 
 const ArrayOfPhotos = Array.from({length: NUMBER_OF_OBJECTS}, (_, i) => createPhoto(i + 1));
-console.log(ArrayOfPhotos);
+
