@@ -1,8 +1,5 @@
 // функция проверки длины строки
-const checkStringLength = (string, length) => string.length <= length;
-
-
-
+/*const checkStringLength = (string, length) => string.length <= length;
 
 // функция проверки является ли строка палиндромом
 
@@ -14,8 +11,6 @@ const isPalindrome = (string) => {
   }
   return normal === reversed;
 }
-
-
 
 // функция извлечения цифр
 
@@ -30,6 +25,4 @@ const getDigits = (string) => {
     }
   }
   return parseInt(digits, 10);
-}
-
-
+}*/
