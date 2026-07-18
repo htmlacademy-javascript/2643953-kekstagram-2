@@ -19,10 +19,7 @@ export const renderCards = (pictures) => {
     newCardNode.querySelector('.picture__likes').textContent = picture.likes;
     fragment.append(newCardNode);
 
-    /* newCardNode.addEventListener('click', () => {
 
-       openModal(picture);
-     });*/
 
     newCardNode.dataset.id = picture.id;
 
