@@ -1,4 +1,3 @@
-import './utils.js';
 import {photos} from './data.js';
 import {renderCards} from './render-cards.js';
 

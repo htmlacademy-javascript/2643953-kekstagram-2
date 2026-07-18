@@ -1,10 +1,14 @@
 
 import { openModal } from './big-picture.js';
-import { closeModal } from './big-picture.js';
+
+
 const cardContainerNode = document.querySelector('.pictures');
 const cardTemplate = document.querySelector('#picture').content.querySelector('.picture');
-const closeModalBtn = document.querySelector('.big-picture__cancel');
+
+let localPhotos;
+
 export const renderCards = (pictures) => {
+  localPhotos = [...pictures];
   const fragment = document.createDocumentFragment();
   pictures.forEach((picture) => {
     const newCardNode = cardTemplate.cloneNode(true);
@@ -15,26 +19,24 @@ export const renderCards = (pictures) => {
     newCardNode.querySelector('.picture__likes').textContent = picture.likes;
     fragment.append(newCardNode);
 
-    newCardNode.addEventListener('click', () => {
+    /* newCardNode.addEventListener('click', () => {
 
-      openModal(picture);
-    });
+       openModal(picture);
+     });*/
 
-    closeModalBtn.addEventListener('click', () => {
-
-      closeModal();
-    });
-
-
-    document.addEventListener('keydown', (evt) => {
-      if (evt.key === 'Escape') {
-        evt.preventDefault();
-        closeModal();
-      }
-    });
-
+    newCardNode.dataset.id = picture.id;
 
   });
   cardContainerNode.append(fragment);
 
-}
+};
+
+
+cardContainerNode.addEventListener('click', (evt) => {
+  const cardNode = evt.target.closest('.picture');
+  if (cardNode) {
+    const currentId = Number(cardNode.dataset.id);
+    const currentPhoto = localPhotos.find((item) => item.id === currentId);
+    openModal(currentPhoto);
+  }
+});
