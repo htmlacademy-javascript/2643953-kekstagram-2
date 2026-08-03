@@ -1,79 +1,83 @@
-
 export const Effects = {
-  CHROME: 'chrome',
-  SEPIA: 'sepia',
-  MARVIN: 'marvin',
-  PHOBOS: 'phobos',
-  HEAT: 'heat',
-  NONE: 'none',
+  CHROME: "chrome",
+  SEPIA: "sepia",
+  MARVIN: "marvin",
+  PHOBOS: "phobos",
+  HEAT: "heat",
+  NONE: "none",
 };
 
 export const EffectsSettings = {
   [Effects.CHROME]: {
-    slider:{
-      range:{
+    slider: {
+      range: {
         min: 0,
         max: 1,
       },
+      step: 0.1,
       start: 1,
     },
-    style: 'grayscale',
-    units: '',
-    },
+    style: "grayscale",
+    units: "",
+  },
   [Effects.SEPIA]: {
-    slider:{
-      range:{
+    slider: {
+      range: {
         min: 0,
         max: 1,
       },
+      step: 0.1,
       start: 1,
     },
 
-    style: 'sepia',
-    units: '',
+    style: "sepia",
+    units: "",
   },
   [Effects.MARVIN]: {
-    slider:{
-      range:{
+    slider: {
+      range: {
         min: 0,
         max: 100,
       },
+      step: 1,
       start: 100,
     },
-    style: 'invert',
-    units: '%',
+    style: "invert",
+    units: "%",
   },
   [Effects.PHOBOS]: {
-    slider:{
-      range:{
+    slider: {
+      range: {
         min: 0,
-        max: 1,
+        max: 3,
       },
-      start: 1,
+      step: 0.1,
+      start: 3,
     },
-    style: 'blur',
-    units: '',
+    style: "blur",
+    units: "px",
   },
   [Effects.HEAT]: {
-    slider:{
-      range:{
+    slider: {
+      range: {
         min: 0,
-        max: 1,
+        max: 3,
       },
-      start: 1,
+      step: 0.1,
+      start: 3,
     },
-    style: 'brightness',
-    units: '',
+    style: "brightness",
+    units: "",
   },
   [Effects.NONE]: {
-    slider:{
-      range:{
+    slider: {
+      range: {
         min: 0,
         max: 1,
       },
       start: 1,
     },
-    style: 'none',
-    units: '',
+    style: "none",
+    units: "",
   },
 };
