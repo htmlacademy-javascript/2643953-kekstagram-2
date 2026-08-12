@@ -1,3 +1,4 @@
+const DELAY = 5000;
 const dataErrorTemplate = document.querySelector('#data-error').content.querySelector('.data-error');
 
 const getRandomPositiveInteger = (a, b) => {
@@ -9,8 +10,8 @@ const getRandomPositiveInteger = (a, b) => {
 
 const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
 
-export {getRandomPositiveInteger};
-export {getRandomArrayElement};
+export {getRandomPositiveInteger, getRandomArrayElement};
+
 
 
 export const showDataError = ()=> {
@@ -20,6 +21,15 @@ export const showDataError = ()=> {
   setTimeout(() =>{
     dataErrorNode.remove();
 
-  }, 5000);
+  }, DELAY);
+
+};
+
+export debounce = (callback, timeoutDelay = DELAY) => {
+  let timeoutId;
+  return (...rest) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
+  };
 
 };
