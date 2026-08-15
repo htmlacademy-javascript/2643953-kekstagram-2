@@ -1,3 +1,20 @@
+const RANDOM_FACTOR = 0.5;
+const RANDOM_NUMBER = 10;
+
+export const Filters = {
+  DEFAULT: "filter-default",
+  RANDOM: "filter-random",
+  DISCUSSED: "filter-discussed",
+};
+
+export const FiltersActions = {
+  [Filters.DEFAULT]: (data) => data,
+  [Filters.DISCUSSED]: (data) =>
+    [...data].sort((a, b) => b.comments.length - a.comments.length),
+  [Filters.RANDOM]: (data) =>
+    [...data].sort(() => Math.random() - RANDOM_FACTOR).slice(0, RANDOM_NUMBER),
+};
+
 export const Effects = {
   CHROME: "chrome",
   SEPIA: "sepia",
