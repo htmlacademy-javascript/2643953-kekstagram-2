@@ -11,9 +11,9 @@ const cancelButtonNode = modalNode.querySelector("#upload-cancel");
 const hashtagsNode = formNode.querySelector(".text__hashtags");
 const descriptionNode = formNode.querySelector(".text__description");
 const submitButton = formNode.querySelector("#upload-submit");
-
+const radiosPreviewNode = formNode.querySelectorAll('.effects__preview');
 const imagePreview = formNode.querySelector(".img-upload__preview img");
-let currentUrl = "img/upload-default-image.jpg";
+
 
 const resetForm = () => {
   formNode.reset();
@@ -44,8 +44,11 @@ const openUploadModal = () => {
   document.addEventListener("keydown", onDocumentKeydown);
 
   const file = uploadInputNode.files[0];
-  currentUrl = URL.createObjectURL(file);
+  const currentUrl = URL.createObjectURL(file);
   imagePreview.src = currentUrl;
+  radiosPreviewNode.forEach((item) => {
+    item.style.backgroundImage = `url(${currentUrl})`;
+  });
 };
 
 const closeUploadModal = () => {

@@ -16,6 +16,14 @@ noUiSlider.create(sliderNode, {
   },
   start: 80,
   connect: "lower",
+  format: {
+    to: function (value) {
+      return parseFloat(value);
+    },
+    from: function (value) {
+      return parseFloat(value);
+    },
+  },
 });
 
 sliderNode.noUiSlider.on("update", () => {
