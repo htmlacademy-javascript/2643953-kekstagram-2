@@ -5,11 +5,11 @@ const SCALE = {
   DEFAULT: 100,
 };
 
-const formNode = document.querySelector('#upload-select-image');
-const scaleSmallerNode = formNode.querySelector('.scale__control--smaller');
-const scaleBiggerNode = formNode.querySelector('.scale__control--bigger');
-const scaleValueNode = formNode.querySelector('.scale__control--value');
-const imgPreviewNode = formNode.querySelector('.img-upload__preview img');
+const formNode = document.querySelector("#upload-select-image");
+const scaleSmallerNode = formNode.querySelector(".scale__control--smaller");
+const scaleBiggerNode = formNode.querySelector(".scale__control--bigger");
+const scaleValueNode = formNode.querySelector(".scale__control--value");
+const imgPreviewNode = formNode.querySelector(".img-upload__preview img");
 
 let currentScale = SCALE.DEFAULT;
 
@@ -20,12 +20,8 @@ const updateScale = (value) => {
 updateScale(currentScale);
 
 const changeScale = (step) => {
-  currentScale = Math.min(
-    Math.max(currentScale + step, SCALE.MIN),
-    SCALE.MAX,
-  );
+  currentScale = Math.min(Math.max(currentScale + step, SCALE.MIN), SCALE.MAX);
   updateScale();
-  
 };
 
 scaleSmallerNode.addEventListener("click", () => {
@@ -36,8 +32,7 @@ scaleBiggerNode.addEventListener("click", () => {
   changeScale(SCALE.STEP);
 });
 
-
 export const resetScale = () => {
-  currentScale = SCALE.DEFAULT
+  currentScale = SCALE.DEFAULT;
   updateScale();
 };
