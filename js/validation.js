@@ -67,7 +67,7 @@ validation.addValidator(
 validation.addValidator(
   hashtagsNode,
   checkUniqueHashtags,
-  'Хештеги должны быть уникальны',
+  'Хештеги должны быть уникальны.',
   2,
   true,
 );
