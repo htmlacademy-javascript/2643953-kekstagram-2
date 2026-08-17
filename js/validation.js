@@ -2,14 +2,14 @@ const MAX_DESCRIPTION = 140;
 const MAX_HASHTAGS = 5;
 const HASTAG_FORMULA = /^#[a-zа-я0-9]{1,19}$/i;
 
-const formNode = document.querySelector("#upload-select-image");
-const descriptionNode = formNode.querySelector(".text__description");
-const hashtagsNode = formNode.querySelector(".text__hashtags");
+const formNode = document.querySelector('#upload-select-image');
+const descriptionNode = formNode.querySelector('.text__description');
+const hashtagsNode = formNode.querySelector('.text__hashtags');
 
 const validation = new Pristine(formNode, {
-  classTo: "img-upload__field-wrapper",
-  errorTextParent: "img-upload__field-wrapper",
-  errorTextClass: "img-upload__field-wrapper--error",
+  classTo: 'img-upload__field-wrapper',
+  errorTextParent: 'img-upload__field-wrapper',
+  errorTextClass: 'img-upload__field-wrapper--error',
 });
 
 const checkDescription = (value) => value.length <= MAX_DESCRIPTION;
@@ -51,7 +51,7 @@ validation.addValidator(
 validation.addValidator(
   hashtagsNode,
   checkHashtags,
-  "Хэштэг должен начинаться с решетки, включать буквы, цифры и не превышать 20 символов",
+  'Хэштэг должен начинаться с решетки, включать буквы, цифры и не превышать 20 символов',
   1,
   true,
 );
@@ -67,7 +67,7 @@ validation.addValidator(
 validation.addValidator(
   hashtagsNode,
   checkUniqueHashtags,
-  "Хештеги должны быть уникальны",
+  'Хештеги должны быть уникальны',
   2,
   true,
 );

@@ -5,30 +5,31 @@ const SCALE = {
   DEFAULT: 100,
 };
 
-const formNode = document.querySelector("#upload-select-image");
-const scaleSmallerNode = formNode.querySelector(".scale__control--smaller");
-const scaleBiggerNode = formNode.querySelector(".scale__control--bigger");
-const scaleValueNode = formNode.querySelector(".scale__control--value");
-const imgPreviewNode = formNode.querySelector(".img-upload__preview img");
+const formNode = document.querySelector('#upload-select-image');
+const scaleSmallerNode = formNode.querySelector('.scale__control--smaller');
+const scaleBiggerNode = formNode.querySelector('.scale__control--bigger');
+const scaleValueNode = formNode.querySelector('.scale__control--value');
+const imgPreviewNode = formNode.querySelector('.img-upload__preview img');
 
 let currentScale = SCALE.DEFAULT;
 
-const updateScale = (value) => {
+const updateScale = () => {
   imgPreviewNode.style.transform = `scale(${currentScale / 100})`;
   scaleValueNode.value = `${currentScale}%`;
 };
-updateScale(currentScale);
+
+updateScale();
 
 const changeScale = (step) => {
   currentScale = Math.min(Math.max(currentScale + step, SCALE.MIN), SCALE.MAX);
   updateScale();
 };
 
-scaleSmallerNode.addEventListener("click", () => {
+scaleSmallerNode.addEventListener('click', () => {
   changeScale(-SCALE.STEP);
 });
 
-scaleBiggerNode.addEventListener("click", () => {
+scaleBiggerNode.addEventListener('click', () => {
   changeScale(SCALE.STEP);
 });
 

@@ -1,14 +1,14 @@
-const successTemplate = document
-  .querySelector("#success")
-  .content.querySelector(".success");
-const errorTemplate = document
-  .querySelector("#error")
-  .content.querySelector(".error");
-
 export const Messages = {
-  SUCCESS: "success",
-  ERROR: "error",
+  SUCCESS: 'success',
+  ERROR: 'error',
 };
+
+const successTemplate = document
+  .querySelector('#success')
+  .content.querySelector('.success');
+const errorTemplate = document
+  .querySelector('#error')
+  .content.querySelector('.error');
 
 const templates = {
   [Messages.SUCCESS]: successTemplate,
@@ -16,15 +16,15 @@ const templates = {
 };
 
 export const showMessage = (type) => {
-  const elementNode = templates[type].cloneNode(true);
-  document.body.append(elementNode);
+  const popupNode = templates[type].cloneNode(true);
+  document.body.append(popupNode);
 
   const onButtonClick = () => {
     closeMessage();
   };
 
   const onDocumentKeydown = (evt) => {
-    if (evt.key === "Escape") {
+    if (evt.key === 'Escape') {
       closeMessage();
     }
   };
@@ -36,13 +36,13 @@ export const showMessage = (type) => {
   };
 
   function closeMessage() {
-    elementNode.remove();
-    document.removeEventListener("keydown", onDocumentKeydown);
+    popupNode.remove();
+    document.removeEventListener('keydown', onDocumentKeydown);
   }
 
-  elementNode
+  popupNode
     .querySelector(`.${type}__button`)
-    .addEventListener("click", onButtonClick);
-  elementNode.addEventListener("click", onOverlayClick);
-  document.addEventListener("keydown", onDocumentKeydown);
+    .addEventListener('click', onButtonClick);
+  popupNode.addEventListener('click', onOverlayClick);
+  document.addEventListener('keydown', onDocumentKeydown);
 };

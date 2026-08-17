@@ -1,7 +1,9 @@
 const DELAY = 500;
+const ERROR_DELAY = 5000;
+
 const dataErrorTemplate = document
-  .querySelector("#data-error")
-  .content.querySelector(".data-error");
+  .querySelector('#data-error')
+  .content.querySelector('.data-error');
 
 export const showDataError = () => {
   const dataErrorNode = dataErrorTemplate.cloneNode(true);
@@ -9,7 +11,7 @@ export const showDataError = () => {
 
   setTimeout(() => {
     dataErrorNode.remove();
-  }, DELAY);
+  }, ERROR_DELAY);
 };
 
 export const debounce = (callback, timeoutDelay = DELAY) => {
@@ -20,6 +22,5 @@ export const debounce = (callback, timeoutDelay = DELAY) => {
   };
 };
 
-export const getFilteredData = (filter, data, actions) => {
-  return actions[filter](data);
-};
+export const getFilteredData = (filter, data, actions) => actions[filter](data);
+

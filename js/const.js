@@ -2,9 +2,9 @@ const RANDOM_FACTOR = 0.5;
 const RANDOM_NUMBER = 10;
 
 export const Filters = {
-  DEFAULT: "filter-default",
-  RANDOM: "filter-random",
-  DISCUSSED: "filter-discussed",
+  DEFAULT: 'filter-default',
+  RANDOM: 'filter-random',
+  DISCUSSED: 'filter-discussed',
 };
 
 export const FiltersActions = {
@@ -16,12 +16,12 @@ export const FiltersActions = {
 };
 
 export const Effects = {
-  CHROME: "chrome",
-  SEPIA: "sepia",
-  MARVIN: "marvin",
-  PHOBOS: "phobos",
-  HEAT: "heat",
-  NONE: "none",
+  CHROME: 'chrome',
+  SEPIA: 'sepia',
+  MARVIN: 'marvin',
+  PHOBOS: 'phobos',
+  HEAT: 'heat',
+  NONE: 'none',
 };
 
 export const EffectsSettings = {
@@ -34,8 +34,8 @@ export const EffectsSettings = {
       step: 0.1,
       start: 1,
     },
-    style: "grayscale",
-    units: "",
+    style: 'grayscale',
+    units: '',
   },
   [Effects.SEPIA]: {
     slider: {
@@ -47,8 +47,8 @@ export const EffectsSettings = {
       start: 1,
     },
 
-    style: "sepia",
-    units: "",
+    style: 'sepia',
+    units: '',
   },
   [Effects.MARVIN]: {
     slider: {
@@ -59,8 +59,8 @@ export const EffectsSettings = {
       step: 1,
       start: 100,
     },
-    style: "invert",
-    units: "%",
+    style: 'invert',
+    units: '%',
   },
   [Effects.PHOBOS]: {
     slider: {
@@ -71,20 +71,20 @@ export const EffectsSettings = {
       step: 0.1,
       start: 3,
     },
-    style: "blur",
-    units: "px",
+    style: 'blur',
+    units: 'px',
   },
   [Effects.HEAT]: {
     slider: {
       range: {
-        min: 0,
+        min: 1,
         max: 3,
       },
       step: 0.1,
       start: 3,
     },
-    style: "brightness",
-    units: "",
+    style: 'brightness',
+    units: '',
   },
   [Effects.NONE]: {
     slider: {
@@ -94,7 +94,7 @@ export const EffectsSettings = {
       },
       start: 1,
     },
-    style: "none",
-    units: "",
+    style: 'none',
+    units: '',
   },
 };

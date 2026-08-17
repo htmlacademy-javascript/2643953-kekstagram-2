@@ -1,11 +1,11 @@
-import { Effects, EffectsSettings } from "./const";
+import { Effects, EffectsSettings } from './const.js';
 
-const formNode = document.querySelector("#upload-select-image");
-const effectsListNode = formNode.querySelector(".effects__list");
-const imageNode = formNode.querySelector(".img-upload__preview img");
-const sliderNode = formNode.querySelector(".effect-level__slider");
-const effectValueNode = formNode.querySelector(".effect-level__value");
-const sliderContainerNode = formNode.querySelector(".effect-level");
+const formNode = document.querySelector('#upload-select-image');
+const effectsListNode = formNode.querySelector('.effects__list');
+const imageNode = formNode.querySelector('.img-upload__preview img');
+const sliderNode = formNode.querySelector('.effect-level__slider');
+const effectValueNode = formNode.querySelector('.effect-level__value');
+const sliderContainerNode = formNode.querySelector('.effect-level');
 
 let currentEffect = Effects.NONE;
 
@@ -15,7 +15,7 @@ noUiSlider.create(sliderNode, {
     max: 100,
   },
   start: 80,
-  connect: "lower",
+  connect: 'lower',
   format: {
     to: function (value) {
       return parseFloat(value);
@@ -26,7 +26,7 @@ noUiSlider.create(sliderNode, {
   },
 });
 
-sliderNode.noUiSlider.on("update", () => {
+sliderNode.noUiSlider.on('update', () => {
   const value = sliderNode.noUiSlider.get();
 
   effectValueNode.value = value;
@@ -43,11 +43,11 @@ const updateOptions = () => {
 export const resetEffects = () => {
   currentEffect = Effects.NONE;
   updateOptions();
-  imageNode.style.filter = "";
-  sliderContainerNode.classList.add("hidden");
+  imageNode.style.filter = '';
+  sliderContainerNode.classList.add('hidden');
 };
 
-effectsListNode.addEventListener("change", (evt) => {
+effectsListNode.addEventListener('change', (evt) => {
   currentEffect = evt.target.value;
 
   if (currentEffect === Effects.NONE) {
@@ -55,7 +55,8 @@ effectsListNode.addEventListener("change", (evt) => {
     return;
   }
   updateOptions();
-  sliderContainerNode.classList.remove("hidden");
+  sliderContainerNode.classList.remove('hidden');
 });
 
 resetEffects();
+
