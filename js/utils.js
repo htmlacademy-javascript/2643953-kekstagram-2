@@ -1,18 +1,9 @@
 const DELAY = 500;
+const ERROR_DELAY = 5000;
+
 const dataErrorTemplate = document
-  .querySelector("#data-error")
-  .content.querySelector(".data-error");
-
-// const getRandomPositiveInteger = (a, b) => {
-//   const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
-//   const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
-//   const result = Math.random() * (upper - lower + 1) + lower;
-//   return Math.floor(result);
-// };
-
-// const getRandomArrayElement = (elements) => elements[getRandomPositiveInteger(0, elements.length - 1)];
-
-// export {getRandomPositiveInteger, getRandomArrayElement};
+  .querySelector('#data-error')
+  .content.querySelector('.data-error');
 
 export const showDataError = () => {
   const dataErrorNode = dataErrorTemplate.cloneNode(true);
@@ -20,7 +11,7 @@ export const showDataError = () => {
 
   setTimeout(() => {
     dataErrorNode.remove();
-  }, DELAY);
+  }, ERROR_DELAY);
 };
 
 export const debounce = (callback, timeoutDelay = DELAY) => {
@@ -31,6 +22,5 @@ export const debounce = (callback, timeoutDelay = DELAY) => {
   };
 };
 
-export const getFilteredData = (filter, data, actions) => {
-  return actions[filter](data);
-};
+export const getFilteredData = (filter, data, actions) => actions[filter](data);
+
